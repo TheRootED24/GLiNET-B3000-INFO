@@ -1,0 +1,33 @@
+IPQ5018# smeminfo
+ubi0: attaching mtd1
+ubi0: scanning is finished
+ubi0: attached mtd1 (name "mtd=0", size 120 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: minunit sizes: 048/2048, sub-page size 2048
+ubi0: VID header offset: d 2048), data offset: 4096
+ubi0: good PEBs: 960, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 4, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 7/3, WL thres image sequence number: 1649316990
+flash_type:able PEBs: 0,0xbtal reserved PEBs: 960, PEBs reserved for bad PEB handling: 20
+flash_index:            0x0
+flash_chip_select:      0x0
+flae:   0x20000
+flash_density:          0x80000
+partition table offset  0x0
+No.: Name             Attributes            Start             Size
+  0: 0:SBL1           0x0000ffff              0x0          0x80000
+  1: 0:MIBIB          0x0000ffff          0x80000          0x80000
+  2: 0:BOOTCONFIG     0x0000ffff         0x100000          0x40000
+  3: 0:QSEE           0x0000ffff         0x140000         0x100000
+  4: 0:DEVCFG         0x0000ffff         0x240000          0x40000
+  5: 0:CDT            0x0000ffff    00          0x40000
+  6: 0:APPSBLENV      0x0000ffff         0x2c0000          0x80000
+  7: 0:APPSBL         0x0000ffff         0x340000         0 8: 0:ART            0x0000ffff         0x480000         0x100000
+  9: 0:TRAINING       0x0     0x58000          0x80000
+ 10: CFG              0x0000ffff         0x600000         0x200000
+ 11: rootfs           0x0000ffff         0x800000        0x7800000
+        ubi vol 0 kernel
+        ubi vol 1 wifi_fw
+        ubi vol 2 ubi_rootfs
+        ubi vol 3 rootfs_data
+

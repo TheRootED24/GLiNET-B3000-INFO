@@ -1,0 +1,450 @@
+BusyBox v1.35.0 (2024-07-31 02:52:48 UTC) built-in shell (ash)
+
+     MM           NM                    MMMMMMM          M       M
+   $MMMMM        MMMMM                MMMMMMMMMMM      MMM     MMM
+  MMMMMMMM     MM MMMMM.              MMMMM:MMMMMM:   MMMM   MMMMM
+MMMM= MMMMMM  MMM   MMMM       MMMMM   MMMM  MMMMMM   MMMM  MMMMM'
+MMMM=  MMMMM MMMM    MM       MMMMM    MMMM    MMMM   MMMMNMMMMM
+MMMM=   MMMM  MMMMM          MMMMM     MMMM    MMMM   MMMMMMMM
+MMMM=   MMMM   MMMMMM       MMMMM      MMMM    MMMM   MMMMMMMMM
+MMMM=   MMMM     MMMMM,    NMMMMMMMM   MMMM    MMMM   MMMMMMMMMMM
+MMMM=   MMMM      MMMMMM   MMMMMMMM    MMMM    MMMM   MMMM  MMMMMM
+MMMM=   MMMM   MM    MMMM    MMMM      MMMM    MMMM   MMMM    MMMM
+MMMM$ ,MMMMM  MMMMM  MMMM    MMM       MMMM   MMMMM   MMMM    MMMM
+  MMMMMMM:      MMMMMMM     M         MMMMMMMMMMMM  MMMMMMM MMMMMMM
+    MMMMMM       MMMMN     M           MMMMMMMMM      MMMM    MMMM
+     MMMM          M                    MMMMMMM        M       M
+       M
+ ---------------------------------------------------------------
+   For those about to rock... OpenWrt 19.07-SNAPSHOT, r0-eb1338edd
+ ---------------------------------------------------------------
+root@GL-B3000:~# cat /proc/cmdline
+console=ttyMSM0,115200n8 ubi.mtd=rootfs root=mtd:ubi_rootfs rootfstype=squashfs rootwait swiotlb=1 coherent_pool=2M
+root@GL-B3000:~# cat /proc/cpuinfo
+processor	: 0
+BogoMIPS	: 48.00
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid
+CPU implementer	: 0x51
+CPU architecture: 8
+CPU variant	: 0xa
+CPU part	: 0x801
+CPU revision	: 4
+
+processor	: 1
+BogoMIPS	: 48.00
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid
+CPU implementer	: 0x51
+CPU architecture: 8
+CPU variant	: 0xa
+CPU part	: 0x801
+CPU revision	: 4
+
+root@GL-B3000:~# cat /proc/meminfo
+MemTotal:         394644 kB
+MemFree:          158132 kB
+MemAvailable:     162720 kB
+Buffers:            9824 kB
+Cached:            37368 kB
+SwapCached:            0 kB
+Active:            41932 kB
+Inactive:          18920 kB
+Active(anon):      14736 kB
+Inactive(anon):      188 kB
+Active(file):      27196 kB
+Inactive(file):    18732 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         13692 kB
+Mapped:            11792 kB
+Shmem:              1264 kB
+KReclaimable:       7428 kB
+Slab:             107012 kB
+SReclaimable:       7428 kB
+SUnreclaim:        99584 kB
+KernelStack:        2032 kB
+PageTables:          788 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      197320 kB
+Committed_AS:      23124 kB
+VmallocTotal:   262930368 kB
+VmallocUsed:       28852 kB
+VmallocChunk:          0 kB
+Percpu:              376 kB
+root@GL-B3000:~# cat /proc/devices
+Character devices:
+  1 mem
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+ 10 misc
+ 13 input
+ 14 sound
+ 29 fb
+ 89 i2c
+ 90 mtd
+108 ppp
+116 alsa
+128 ptm
+136 pts
+153 spi
+180 usb
+189 usb_device
+235 ecm_state
+236 ttyBT
+237 diag
+238 dump
+239 ubi0
+240 coresight-stm
+241 rpmb
+242 wwan_port
+243 nvme
+244 ttyMSM
+245 ttyEUD
+246 mhi_uci
+247 watchdog
+248 iio
+249 ptp
+250 pps
+251 rtc
+252 msm_sps
+253 rpmsg
+254 gpiochip
+256 msm_rng
+
+Block devices:
+  1 ramdisk
+root@GL-B3000:~# cat /proc/devices
+Character devices:
+  1 mem
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+ 10 misc
+ 13 input
+ 14 sound
+ 29 fb
+ 89 i2c
+ 90 mtd
+108 ppp
+116 alsa
+128 ptm
+136 pts
+153 spi
+180 usb
+189 usb_device
+235 ecm_state
+236 ttyBT
+237 diag
+238 dump
+239 ubi0
+240 coresight-stm
+241 rpmb
+242 wwan_port
+243 nvme
+244 ttyMSM
+245 ttyEUD
+246 mhi_uci
+247 watchdog
+248 iio
+249 ptp
+250 pps
+251 rtc
+252 msm_sps
+253 rpmsg
+254 gpiochip
+256 msm_rng
+
+Block devices:
+  1 ramdisk
+  7 loop
+  8 sd
+ 31 mtdblock
+ 65 sd
+ 66 sd
+ 67 sd
+ 68 sd
+ 69 sd
+ 70 sd
+ 71 sd
+128 sd
+129 sd
+130 sd
+131 sd
+132 sd
+133 sd
+134 sd
+135 sd
+179 mmc
+253 ubiblock
+254 device-mapper
+259 blkext
+root@GL-B3000:~# ls /sys/devices/platform
+Fixed MDIO bus.0        power                   reg-dummy
+cpufreq-dt              psci                    regulatory.0
+ctx-save                qcom,test@0             smem
+firmware:qfprom         qseecom                 snd-soc-dummy
+gl-hw                   qti,scm_restart_reason  soc
+hwlock                  qti,sps                 srd_trace
+pmu                     qti,tzlog               uevent
+root@GL-B3000:~# cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00080000 00020000 "0:SBL1"
+mtd1: 00080000 00020000 "0:MIBIB"
+mtd2: 00040000 00020000 "0:BOOTCONFIG"
+mtd3: 00100000 00020000 "0:QSEE"
+mtd4: 00040000 00020000 "0:DEVCFG"
+mtd5: 00040000 00020000 "0:CDT"
+mtd6: 00080000 00020000 "0:APPSBLENV"
+mtd7: 00140000 00020000 "0:APPSBL"
+mtd8: 00100000 00020000 "0:ART"
+mtd9: 00080000 00020000 "0:TRAINING"
+mtd10: 00200000 00020000 "CFG"
+mtd11: 07800000 00020000 "rootfs"
+mtd12: 00361468 0001f000 "kernel"
+mtd13: 003e9800 0001f000 "wifi_fw"
+mtd14: 02c14000 0001f000 "ubi_rootfs"
+mtd15: 03830000 0001f000 "rootfs_data"
+root@GL-B3000:~# cat /sys/class/mtd/mtd*/offset
+0
+524288
+6291456
+8388608
+1048576
+1310720
+2359296
+2621440
+2883584
+3407872
+4718592
+5767168
+root@GL-B3000:~# ifconfig -a
+bond0     Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX  
+          BROADCAST MASTER MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+br-lan    Link encap:Ethernet  HWaddr ZZ:ZZ:ZZ:ZZ:ZZ:ZZ  
+          inet addr:192.168.8.1  Bcast:192.168.8.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:218261 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:579570 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:28636491 (27.3 MiB)  TX bytes:766793334 (731.2 MiB)
+
+erspan0   Link encap:Ethernet  HWaddr 00:00:00:00:00:00  
+          BROADCAST MULTICAST  MTU:1450  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+eth0      Link encap:Ethernet  HWaddr 00:11:22:33:44:55  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:84 
+
+eth1      Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX  
+          inet6 addr: 0000::0000:0000:0000:0000/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:875868 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:859746 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:807079854 (769.6 MiB)  TX bytes:805595327 (768.2 MiB)
+          Interrupt:85 
+
+eth1.1    Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX  
+          inet addr:192.168.1.136  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:657586 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:279718 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:759166568 (723.9 MiB)  TX bytes:33809537 (32.2 MiB)
+
+eth1.2    Link encap:Ethernet  HWaddr ZZ:ZZ:ZZ:ZZ:ZZ:ZZ  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:218261 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:579570 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:28641111 (27.3 MiB)  TX bytes:766793334 (731.2 MiB)
+
+gre0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:1476  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+gretap0   Link encap:Ethernet  HWaddr 00:00:00:00:00:00  
+          BROADCAST MULTICAST  MTU:1462  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+ifb0      Link encap:Ethernet  HWaddr AA:AA:AA:AA:AA:AA  
+          BROADCAST NOARP  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+ifb1      Link encap:Ethernet  HWaddr BB:BB:BB:BB:BB:BB  
+          BROADCAST NOARP  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+ip6gre0   Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:1448  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+ip6tnl0   Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:1452  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:16 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1702 (1.6 KiB)  TX bytes:1702 (1.6 KiB)
+
+sit0      Link encap:IPv6-in-IPv4  
+          NOARP  MTU:1480  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+soc0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          [NO FLAGS]  MTU:0  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+soc1      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          [NO FLAGS]  MTU:0  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+teql0     Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wifi0     Link encap:UNSPEC  HWaddr 00-03-7F-12-5F-5F-00-00-00-00-00-00-00-00-00-00  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:2699 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wifi1     Link encap:UNSPEC  HWaddr 00-03-7F-12-B8-B8-00-00-00-00-00-00-00-00-00-00  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:2699 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wlan0     Link encap:Ethernet  HWaddr AA:BB:CC:DD:EE:FC  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wlan1     Link encap:Ethernet  HWaddr AA:BB:CC:DD:EE:FD  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@GL-B3000:~# ls /sys/class/net
+bond0            eth1.1           ip6gre0          teql0
+bonding_masters  eth1.2           ip6tnl0          wifi0
+br-lan           gre0             lo               wifi1
+erspan0          gretap0          sit0             wlan0
+eth0             ifb0             soc0             wlan1
+eth1             ifb1             soc1
+root@GL-B3000:~# brctl show
+bridge name	bridge id		STP enabled	interfaces
+br-lan		7fff.9483c4a4a6fb	no		eth1.2
+							wlan0
+							wlan1
+root@GL-B3000:~# cat /sys/kernel/debug/gpio
+gpiochip0: GPIOs 465-511, parent: platform/1000000.pinctrl, 1000000.pinctrl:
+ gpio0   : in  low  func0 8mA pull down
+ gpio1   : in  low  func0 8mA pull down
+ gpio2   : in  low  func0 8mA pull down
+ gpio3   : in  low  func0 8mA pull down
+ gpio4   : in  high func2 8mA no pull
+ gpio5   : in  high func2 8mA no pull
+ gpio6   : in  low  func2 8mA no pull
+ gpio7   : in  high func2 8mA no pull
+ gpio8   : in  high func2 8mA no pull
+ gpio9   : in  low  func2 8mA no pull
+ gpio10  : out low  func1 2mA no pull
+ gpio11  : out low  func1 2mA no pull
+ gpio12  : in  low  func1 2mA no pull
+ gpio13  : out low  func1 2mA no pull
+ gpio14  : in  low  func0 8mA pull down
+ gpio15  : out high func0 2mA no pull
+ gpio16  : in  low  func0 8mA pull down
+ gpio17  : in  low  func0 8mA pull down
+ gpio18  : in  low  func0 2mA pull down
+ gpio19  : in  low  func3 8mA pull down
+ gpio20  : in  high func1 8mA no pull
+ gpio21  : in  high func1 8mA no pull
+ gpio22  : in  low  func0 8mA pull down
+ gpio23  : out high func0 8mA pull down
+ gpio24  : out low  func0 8mA pull down
+ gpio25  : in  low  func0 8mA pull down
+ gpio26  : in  low  func0 8mA pull down
+ gpio27  : in  high func0 8mA pull up
+ gpio28  : in  low  func0 8mA pull down
+ gpio29  : in  low  func0 8mA pull down
+ gpio30  : in  low  func0 8mA pull down
+ gpio31  : in  low  func0 8mA pull down
+ gpio32  : in  low  func0 8mA pull down
+ gpio33  : in  low  func0 8mA pull down
+ gpio34  : in  low  func0 8mA pull down
+ gpio35  : in  low  func0 8mA pull down
+ gpio36  : in  low  func1 8mA pull up
+ gpio37  : in  high func1 8mA pull up
+ gpio38  : in  low  func0 8mA pull down
+ gpio39  : out high func0 2mA pull up
+ gpio40  : in  high func1 8mA pull down
+ gpio41  : in  low  func0 8mA pull down
+ gpio42  : in  low  func0 8mA pull down
+ gpio43  : in  low  func0 8mA pull down
+ gpio44  : in  low  func0 8mA pull down
+ gpio45  : in  low  func0 8mA pull down
+ gpio46  : in  low  func1 8mA pull down
+root@GL-B3000:~# 
+
